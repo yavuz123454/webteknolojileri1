@@ -5,51 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="Stil/bootstrap.css" rel="stylesheet">
     <link href="Stil/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Stil/stil.css">
     <script src="Stil/bootstrap.bundle.js"></script>
    
     <title>Document</title>
+
+    <style> 
+      .bg {
+          /* The image used */
+          background-image: url("Resimler/parabirimleri.jpg")  ;
+          background-size: cover;
+          background-repeat: no-repeat;
+          
+          position: relative;
+        
+          /* Full height */
+          height: 60%; 
+          width: 100%;
+        }
+      
+      
+      </style>
 </head>
 <body>
 
 
-    
-
-    <nav  class="navbar navbar-expand-lg navbar-light bg-light">
-        <a style=" margin-left: 50px;" class="navbar-brand" href="#"> <img src="Resimler/yavuz2.jpg" class="rounded" width="80" height="84" alt=""></a>
-           
-        <div  class="collapse navbar-collapse justify-content-center">
-            
-            
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                
-                <li class="breadcrumb-item">
-                    <a href="hakkimda.html">Hakkımda</a>
-                  </li>
-                  
-              <li class="breadcrumb-item">
-                <a href="iletisim.html">İletişim</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="ilgialanlarım.html">İlgi Alanlarım</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="mirasımız.html">Mirasımız</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="ozgecmis.html">Özgeçmiş</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="sehrim.html">Şehrim</a>
-              </li>
-            </ol>
-          </nav>
+  <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="index.html">Yavuz Selim Oğur</a>
+       
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="hakkimda.html">Hakkımda</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="iletisim.html">İletişim</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="ilgialanlarım.html">İlgi Alanlarım</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="mirasımız.html">Mirasımız</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="ozgecmis.html">Özgeçmiş</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="sehrim.html">Şehrim</a></li>
+            </ul>
         </div>
-      </nav>
-      <div style="background-color: rgb(92, 104, 211);" class="container-fluid">
-        <h1 style="color: white;"> İlgi Alanlarım</h1>
-        
-      </div>
+    </div>
+</nav>
+
+<header class="bg" style="margin-bottom: 100px;"> 
+
+  <div style="padding: 100px;" class="container position-relative px-4 px-lg-5 ">
+    <div class="row gx-4 gx-lg-5 justify-content-center ">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <div style="text-align: center; ">
+                <h1 style="color: rgb(83, 83, 83);" >Yatırım</h1>
+                <span style="color: rgb(32, 32, 32);" class="altbaslik">Aşağıda dolar cinsinden para birimlerinin değerleri gösterilmektedir.</span>
+               
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+
+<div class="container" style="margin-left: 30%;">
+<table class="table" id="parabirimi">
+<tr><td>BİRİM</td><td>DEĞERİ</td></tr>
+</table>
+
+</div>
+
+<script>
+  
+
+var tablo=document.getElementById("parabirimi");
+var row=tablo.insertRow(-1);
+var cell1=row.insertCell(0);
+var cell2=row.insertCell(1);
+var deger="2";
+var a=0;
+
+function atama(deger){
+
+deger=JSON.parse(deger);
+console.log(deger.quotes.USDAED);
+for(i in deger.quotes){
+
+  if(a<35){
+  var row=tablo.insertRow(-1);
+var cell1=row.insertCell(0);
+var cell2=row.insertCell(1);
+cell1.innerHTML=i;
+cell2.innerHTML=deger.quotes[i];
+  }
+  else{
+    var row=tablo.insertRow(-1);
+var cell1=row.insertCell(0);
+var cell2=row.insertCell(1);
+cell1.innerHTML=i;
+cell2.innerHTML=deger.quotes[i];
+
+  }
+
+
+
+a=a+1;
+}
+
+}
+
+
+
+
+  var myHeaders = new Headers();
+myHeaders.append("apikey", "uzZN9G1JXhzRGZjnxTJcCOn57erxqQKg");
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow',
+  headers: myHeaders
+};
+
+fetch("https://api.apilayer.com/currency_data/live?source=&currencies=", requestOptions)
+  .then(response => response.text())
+  
+  
+  .then(result => atama(result))
+  
+  .catch(error => console.log('error', error));
+
+
+
+
+
+
+
+
+  // fetch('https://api.collectapi.com/economy/currencyToAll?int=10&base=USD')
+  // .then(function(resp){return resp.json()}).then(function(data){console.log(data)});
+
+
+
+
+
+// var data = null;
+
+// var xhr = new XMLHttpRequest();
+// xhr.withCredentials = true;
+
+// xhr.addEventListener("readystatechange", function () {
+//   if (this.readyState === this.DONE) {
+//     console.log(this.responseText);
+//   }
+// });
+
+// xhr.open("GET", "https://api.collectapi.com/gasPrice/turkeyGasoline?district=kadikoy&city=istanbul");
+
+// xhr.setRequestHeader("content-type", "application/json");
+// xhr.setRequestHeader("authorization", "apikey 6tEOTiNmbQ0ZIqoLmh3tUe:5haG2j5MliJoBfQfEpZ7YS");
+
+// xhr.send(data)
+
+</script>
+
+
+
 
 <footer style="background-color: rgb(216, 215, 219); " >
 

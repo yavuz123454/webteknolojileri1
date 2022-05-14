@@ -14,44 +14,99 @@
 
     
 
-    <nav  class="navbar navbar-expand-lg navbar-light bg-light">
-        <a style=" margin-left: 50px;" class="navbar-brand" href="#"> <img src="Resimler/yavuz2.jpg" class="rounded" width="80" height="84" alt=""></a>
-           
-        <div  class="collapse navbar-collapse justify-content-center">
-            
-            
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                 <li class="breadcrumb-item">
-                <a href="hakkimda.html">Hakkımda</a>
-              </li>
-                    
-                  
-              <li class="breadcrumb-item">
-                <a href="iletisim.html">İletişim</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="ilgialanlarım.html">İlgi Alanlarım</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="mirasımız.html">Mirasımız</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="ozgecmis.html">Özgeçmiş</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="sehrim.html">Şehrim</a>
-              </li>
-            </ol>
-          </nav>
+  <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="index.html">Yavuz Selim Oğur</a>
+       
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="hakkimda.html">Hakkımda</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="iletisim.html">İletişim</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="ilgialanlarım.html">İlgi Alanlarım</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="mirasımız.html">Mirasımız</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="ozgecmis.html">Özgeçmiş</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="sehrim.html">Şehrim</a></li>
+            </ul>
         </div>
-      </nav>
-      <div style="background-color: rgb(92, 104, 211);" class="container-fluid">
-        <h1 style="color: white;"> İletişim</h1>
-        
-      </div>
+    </div>
+</nav>
 
-<footer style="background-color: rgb(216, 215, 219); " >
+
+<form    id="mycontactform" style="background-color: grey;">
+  <div class="form-group" id="mycontactname_div" style="padding-left: 100px; padding-right: 100px; padding-top: 10px; padding-bottom: 10px; margin-top: 50px;">
+      <input name="mycontactname" id="mycontactname" type="text" class="form-control" placeholder="Adınız Soyadınız">
+  </div>
+  <div class="form-group" style="padding-left: 100px; padding-right: 100px;">
+      <div>
+          <div style="width: 49%; float: left; margin-right: 33px;" id="mycontactphone_div">
+              <input name="mycontactphone" id="mycontactphone" type="phone" class="form-control" placeholder="Telefonunuz">
+          </div>
+          <div style="width: 49%;float: left; " id="mycontactemail_div">
+              <input name="mycontactemail" id="mycontactemail" type="email" class="form-control" placeholder="E-Mailiniz">
+          </div>
+          <div class="clearfix"></div>
+      </div>
+  </div>
+  <div class="form-group" style="padding-left: 100px; padding-right: 100px; padding-top: 10px; padding-bottom: 10px;" id="mycontactmessage_div">
+      <textarea name="mycontactmessage"  id="mycontactmessage" class="form-control" rows="6" placeholder="Mesajınız" style="height: 120px;" maxlength="2000"></textarea>
+  </div>
+  <button id="mycontact_btn_sent" style="margin-left: 40%; margin-top: 50px; margin-bottom: 20px;"  type="button" onclick="temizle()" class="btn btn-lg btn-block btn-secondary">Temizle</button>
+  <button id="mycontact_btn_sent" style="margin-left: 5%; margin-top: 50px; margin-bottom: 20px;" onclick="validateForm()"  type="button" value="Submit" class="btn btn-lg btn-block btn-secondary">Gönder</button>
+
+</form>
+<script>
+  function temizle(){
+    
+    document.getElementById("mycontactname").value="";
+    document.getElementById("mycontactphone").value="";
+    document.getElementById("mycontactemail").value="";
+    document.getElementById("mycontactmessage").value="";
+  }
+  function validateForm() {
+   var basarıdurumu=true;
+var isim = document.getElementById("mycontactname").value;
+var telefon=document.getElementById("mycontactphone").value;
+var email=document.getElementById("mycontactemail").value;
+var mesaj=document.getElementById("mycontactmessage").value;
+
+if (isim == null || isim == "") {
+alert("Lütfen Adınızı Giriniz");
+
+basarıdurumu=false;
+return false;
+}
+
+if (telefon == null || telefon == "") {
+alert("Lütfen Telefon Numaranızı Giriniz ");
+
+basarıdurumu=false;
+return false;
+}
+if (email == null || email == "") {
+alert("Lütfen Emailinizi Giriniz ");
+
+basarıdurumu=false;
+return false;
+}
+
+if(email.indexOf('@')==-1){
+  alert("Lütfen Emailinizi Doğru Formatta Giriniz ");
+
+  basarıdurumu=false;
+  return false;
+}
+if(basarıdurumu==true){
+
+  alert("İsim: "+ isim+" Telefon: "+telefon+" E-mail: "+email+" Mesaj: "+mesaj);
+}
+
+
+}
+</script>
+
+
+
+<footer style="background-color: rgb(216, 215, 219); margin-top: 400px;" >
 
       <div class="row">
         <div class="col-sm-6 col-md-3" style="margin-top: 10px">
