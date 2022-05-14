@@ -8,50 +8,121 @@
     <script src="Stil/bootstrap.bundle.js"></script>
    
     <title>Document</title>
+    <style> 
+      .bg {
+          /* The image used */
+          background-image: url("Resimler/sakarya.jpg")  ;
+          background-size: cover;
+          background-repeat: no-repeat;
+          
+          position: relative;
+        
+          /* Full height */
+          height: 60%; 
+          width: 100%;
+        }
+      
+      
+      </style>
+      
 </head>
+
+
 <body>
 
 
     
-
-    <nav  class="navbar navbar-expand-lg navbar-light bg-light">
-        <a style=" margin-left: 50px;" class="navbar-brand" href="#"> <img src="Resimler/yavuz2.jpg" class="rounded" width="80" height="84" alt=""></a>
-           
-        <div  class="collapse navbar-collapse justify-content-center">
-            
-            
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                 <li class="breadcrumb-item">
-                <a href="hakkimda.html">Hakkımda</a>
-              </li>
-                    
-                  
-              <li class="breadcrumb-item">
-                <a href="iletisim.html">İletişim</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="ilgialanlarım.html">İlgi Alanlarım</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="mirasımız.html">Mirasımız</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="ozgecmis.html">Özgeçmiş</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="sehrim.html">Şehrim</a>
-              </li>
-            </ol>
-          </nav>
+  <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="index.html">Yavuz Selim Oğur</a>
+       
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="hakkimda.html">Hakkımda</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="iletisim.html">İletişim</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="ilgialanlarım.html">İlgi Alanlarım</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="mirasımız.html">Mirasımız</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="ozgecmis.html">Özgeçmiş</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3  py-lg-4" href="sehrim.html">Şehrim</a></li>
+            </ul>
         </div>
-      </nav>
-      <div style="background-color: rgb(92, 104, 211);" class="container-fluid">
-        <h1 style="color: white;"> Şehrim</h1>
-        
-      </div>
+    </div>
+</nav>
+<br>
+<br>
 
-<footer style="background-color: rgb(216, 215, 219); " >
+
+<header class="bg" style="margin-bottom: 100px;"> 
+
+  <div style="padding: 100px;" class="container position-relative px-4 px-lg-5 ">
+    <div class="row gx-4 gx-lg-5 justify-content-center ">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <div style="text-align: center; ">
+                <h1 style="color: rgb(255, 255, 255);" >İstanbul</h1>
+                <span style="color: white; font-weight: 500;" >İstanbul sevdiğim bir şehir aşağıda İstanbul'a ait birkaç resim paylaştım</span>
+               
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+  
+
+<div style="width:70%; margin-left: 15%; margin-right: 15%; "  id="demo2" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#demo2" data-bs-slide-to="1" class=""></button>
+    <button type="button" data-bs-target="#demo2" data-bs-slide-to="2" class=""></button>
+    <button type="button" data-bs-target="#demo2" data-bs-slide-to="3" class=""></button>
+    
+  </div>
+
+
+
+
+  <div class="carousel-inner" >
+    <div class="carousel-item active" >
+      <img src="Resimler/ayasofya.jpg" alt="Magnus Carlsen" class="d-block w-100">
+        <div class="carousel-caption">
+    <h3 style="background-color: rgb(63, 63, 63);" >Ayasofya Cami </h3>
+    <p style="background-color: rgb(63, 63, 63);">Dünyanın en tanınmış ibadethanelerinden biri olarak aynı yerde 3 defa inşa edilen Ayasofya, son halini 537 yılında aldı.İstanbul’un fethinden sonra cami olarak ibadete açılan Ayasofya’nın içine mihraplar, minber, müezzin mahfilleri, vaaz kürsüsü ve maksureler eklendi. </p>
+  </div>
+
+    </div>
+    <div class="carousel-item">
+      <img src="Resimler/dolmabahçe.jpg" alt="Garry Kasparov" class="d-block w-100">
+      
+            <div class="carousel-caption">
+        <h3 style="background-color: rgb(63, 63, 63);">Dolmabahçe Sarayı</h3>
+        <p style="background-color: rgb(63, 63, 63);">Osmanlı Padişahı Sultan Abdülmecit tarafından Boğaz kıyısında, 1856’da yaptırılan bu Dolmabahçe Sarayı, Batı mimarisinden izler taşıyan ihtişamlı görüntüsüyle İstanbul’un en önemli simge yapılarından biri.</p>
+      </div> 
+    </div>
+
+    <div class="carousel-item">
+      <img src="Resimler/galata.jpg" alt="Bobby Fischer" class="d-block w-100">
+            <div class="carousel-caption">
+        <h3 style="background-color: rgb(63, 63, 63);">Galata Kulesi</h3>
+        <p style="background-color: rgb(63, 63, 63);">Bugün en tepesine çıkıp İstanbul manzarasını seyretmek için uzun kuyrukların beklendiği Galata Kulesi, İstanbul’un siluetini çizen en önemli simgelerden biri.528 yılında inşa edilen yapı, İstanbul Boğazı ve Haliç’e akim konumda, bir fener kulesi olarak inşa edilmiş ama dönem dönem zindan olarak da kullanılmış.</p>
+      </div>  
+    </div>
+
+    <div class="carousel-item">
+      <img src="Resimler/topkapı.jpg" alt="Fan Zhendong" class="d-block w-100">
+            <div class="carousel-caption">
+        <h3 style="background-color: rgb(63, 63, 63);">Topkapı Sarayı</h3>
+        <p style="background-color: rgb(63, 63, 63);">Osmanlı İmparatorluğu, dünyanın en geniş sınırlara ulaşmış ve yüzyıllarca hakimiyetini sürdürmüş imparatorluklarından biri. Bu köklü tarihin ve ihtişamlı yapının 400 yıl boyunca yönetildiği, sultanların ve ailelerinin yaşadığı Topkapı Sarayı ise bütün görkemiyle Tarihi Yarımada’da görülmeyi bekliyor. </p>
+      </div>  
+    </div>
+    
+
+
+
+  </div>
+  </div>
+  <br>
+  <br>
+<footer style="background-color: rgb(216, 215, 219);" >
 
       <div class="row">
         <div class="col-sm-6 col-md-3" style="margin-top: 10px">

@@ -25,10 +25,56 @@
         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
       </div>
       
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" onclick="gonder()" class="btn btn-primary">Submit</button>
     </form>
   </div>
+<script>
+function gonder(){
+  var gecisuygunlugu=true; 
+  var email=document.getElementById("email").value;
+  var sifre=document.getElementById("pwd").value;
 
+  if (email == null || email == ""){
+
+    gecisuygunlugu=false;
+    alert("Emailiniz boş olamaz");
+  }
+else{
+
+if(email!="g211210005@sakarya.edu.tr"){
+
+  gecisuygunlugu=false;
+  alert("Emailinizi sistemde kayıtlı değil");
+}
+
+}
+
+
+if(sifre == null || sifre == ""){
+
+gecisuygunlugu=false;
+alert("Şifreniz boş olamaz");
+}
+
+else
+{
+
+  if (sifre!="123454") {
+    
+  
+  gecisuygunlugu=false;
+alert("Şifreniz sistemde kayıtlı değil");
+  }
+}
+
+
+if (gecisuygunlugu) {
+  window.location="hakkimda.html";
+}
+  
+}
+
+</script>
 
 
 
